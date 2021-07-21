@@ -11,7 +11,7 @@ public interface FileUploadService {
     
     Student selectById(String id);
     
-    Student insert(Student student);
+    int insert(Student student);
     
     int update(Student student);
     

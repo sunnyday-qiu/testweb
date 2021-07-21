@@ -29,7 +29,7 @@ public class FileUploadServiceImpl implements FileUploadService {
     }
     
     @Override
-    public Student insert(Student student) {
+    public int insert(Student student) {
         return fileUploadDao.insert(student);
     }
     

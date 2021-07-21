@@ -20,7 +20,7 @@ public interface FileUploadDao {
     Student selectById(String id);
     
     @Insert("insert into student (name, age, gender, birthday) values(#{name}, #{age}, #{gender}, #{birthday})")
-    Student insert(Student student);
+    int insert(Student student);
     
     @Update("update student set name=#{name}, gender=${gender}, age=#{age}, gender=#{gender}, birthday=#{birthday} where id = #{id}")
     int update(Student student);

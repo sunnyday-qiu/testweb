@@ -38,7 +38,7 @@ public class FileUploadController {
     }
     
     @PostMapping
-    public Student add(@RequestBody Student student) {
+    public int add(@RequestBody Student student) {
         return fileUploadService.insert(student);
     }
     
