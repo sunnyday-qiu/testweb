@@ -4,10 +4,7 @@ package com.cyy.controller;
 import com.cyy.domain.Student;
 import com.cyy.service.FileUploadService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,11 +27,28 @@ public class FileUploadController {
         return "Hello world";
     }
     
-    
     @GetMapping("list")
     public List<Student> list() {
         return fileUploadService.list();
     }
     
+    @GetMapping("detail")
+    public Student detail(@RequestParam(value = "id") String id) {
+        return fileUploadService.selectById(id);
+    }
     
+    @PostMapping
+    public Student add(@RequestBody Student student) {
+        return fileUploadService.insert(student);
+    }
+    
+    @PutMapping
+    public int update(@RequestBody Student student) {
+        return fileUploadService.update(student);
+    }
+    
+    @DeleteMapping
+    public int delete(@RequestParam(value = "id") String id) {
+        return fileUploadService.delete(id);
+    }
 }
