@@ -11,8 +11,9 @@ import java.util.List;
 @Mapper
 @Repository
 public interface FileUploadDao {
-    
-    
+
+    String TEST = "HOTFIX_1";
+
     @Select("select * from student")
     List<Student> list();
     
