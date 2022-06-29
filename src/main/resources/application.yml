@@ -9,3 +9,5 @@ spring:
 server:
   servlet:
     context-path: "/test"
+logging:
+  level: info
