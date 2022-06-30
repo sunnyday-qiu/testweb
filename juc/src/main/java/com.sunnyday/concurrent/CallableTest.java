@@ -34,7 +34,7 @@ public class CallableTest {
 
 
     public static void main(String[] args) throws Exception {
-        ExecutorService executorService = newFixedThreadPool(2);
+        ExecutorService executorService = newFixedThreadPool(3);
 
         List<Future<Integer>> futures =
                 executorService.invokeAll(tasks, 30L, TimeUnit.SECONDS);
@@ -46,6 +46,7 @@ public class CallableTest {
                 e.printStackTrace();
             }
         });
+        executorService.shutdown();
     }
 
     private static class BaseCallable implements Callable<Integer> {
