@@ -1,0 +1,5 @@
+spring:
+  redis:
+    jedis:
+      pool:
+        max-active: 10
