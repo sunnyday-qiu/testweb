@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunnyday.dao.CustomerMapper">
+    <select id="findAll" resultType="com.sunnyday.entity.Customer">
+        select *
+        from customers
+    </select>
+
+    <insert id="add" parameterType="com.sunnyday.entity.Customer"
+            useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into customers("title", "notes", "organizationId", "ownerId")
+        values (#{title}, #{notes}, #{organizationId}, #{ownerId})
+    </insert>
+</mapper>
+        <!--
+        <mapper namespace="cn.demo.dao.UserMapper">
+        &lt;!&ndash;封装主表user的ORM
+            id属性 唯一标识，后续根据id引用此配置
+            type属性 实体对象的数据类型
+            autoMapping 设置是否自动映射
+        &ndash;&gt;
+        <resultMap id="userMap_id" type="customer" autoMapping="true">
+            &lt;!&ndash;
+                id标签 表中主键，联合主键写多个id标签，多表关系无论是否配置自动映射，请写出id
+                property属性 实体类对象中的字段名
+                column属性 查询结果表中的字段名
+            &ndash;&gt;
+            <id property="id" column="user_id"></id>
+            &lt;!&ndash;非主键的映射关系，如果不能根据驼峰命名法自动映射，需写出映射关系&ndash;&gt;
+            <result property="name" column="user_name"></result>
+            <result property="sex" column="user_sex"></result>
+            &lt;!&ndash;
+                配置多表关联映射关系
+                property属性 被包含对象的变量名
+                ofType属性 被包含对象的数据类型（如:List<Student> 则 ofType="student"）
+                resultMap属性 引用已配置好的映射
+            &ndash;&gt;
+            <collection property="userFamilies" resultMap="userFamilyMap_id"></collection>
+        </resultMap>
+        &lt;!&ndash;配置从表userMessage的映射关系 &ndash;&gt;
+        <resultMap id="userMessageMap_id" type="UserMessage" autoMapping="true">
+            <result column="uid" property="userId"></result>
+            &lt;!&ndash;配置一对一表关系映射，属性与collection基本一致（除了javaType，collection中为ofType），仅使用不同单词明确关系 &ndash;&gt;
+            <association property="customer" resultMap="userMap_id" ></association>
+        </resultMap>
+        &lt;!&ndash;配置userFamily的映射关系&ndash;&gt;
+        <resultMap id="userFamilyMap_id" type="UserFamily" autoMapping="true">
+        </resultMap>
+
+        <sql id="selectAll">
+            select * from customer u, user_message um
+        </sql>
+        &lt;!&ndash;使用配置的映射 resultMap=映射的id 表示返回结果&ndash;&gt;
+        <select id="findUserAndMessage" resultMap="userMessageMap_id">
+            <include refid="selectAll"></include>
+            <where>
+                u.user_id = um.uid
+            </where>
+        </select>
+
+        &lt;!&ndash; 一对多 &ndash;&gt;
+        <select id="findUserAndUserFamily" resultMap="userMap_id">
+            select * from customer u, user_family uf where u.user_id = uf.user_id
+        </select>
+
+        <insert id="insertIntoUser">
+            insert into customer values
+            <foreach collection="list" item="newUser" open="("  close=")" separator="),(">
+                #{newUser.id},#{newUser.name},#{newUser.sex}
+            </foreach>
+        </insert>
+
+        <select id="findUsersById" resultType="customer">
+            select user_id id, user_name name, user_sex sex from customer
+            <where>
+                <if test="start > 0">
+                    user_id > #{start}
+                </if>
+                <if test="end > 0 and end > start">
+                    and user_id &lt; #{end}
+                </if>
+            </where>
+        </select>
+        </mapper>     -->
