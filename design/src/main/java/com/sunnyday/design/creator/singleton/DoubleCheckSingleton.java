@@ -8,15 +8,18 @@ package com.sunnyday.design.singleton;
  */
 public class DoubleCheckSingleton {
 
+    /**
+     * 使用了volatile 关键字
+     */
     private static volatile DoubleCheckSingleton instance;
 
+    /**
+     * 私有化的构造函数，外部只能通过指定方法获取到实例对象
+     */
     private DoubleCheckSingleton() {
     }
 
-    /**
-     * 这里还需要加锁吗？好像不用了吧
-     */
-    public static synchronized DoubleCheckSingleton getInstance() {
+    public static DoubleCheckSingleton getInstance() {
         if (instance == null) {
             synchronized (DoubleCheckSingleton.class) {
                 if (instance == null) {

@@ -9,12 +9,12 @@ package com.sunnyday.design.singleton;
 public class StaticSingleton {
 
     private static class StaticSingletonHolder {
-        private static StaticSingleton instance = new StaticSingleton();
+        private static final StaticSingleton INSTANCE = new StaticSingleton();
     }
 
     private StaticSingleton() {}
 
     public static StaticSingleton getInstance() {
-        return StaticSingletonHolder.instance;
+        return StaticSingletonHolder.INSTANCE;
     }
 }
