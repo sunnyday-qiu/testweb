@@ -1,4 +1,4 @@
-package com.sunnyday.design.prototype;
+package com.sunnyday.design.creator.prototype;
 
 /**
  * 深拷贝与浅拷贝

@@ -1,6 +1,4 @@
-package com.sunnyday.design.factory_method;
-
-import java.util.List;
+package com.sunnyday.design.creator.factory_method;
 
 /**
  * Description: 工厂方法

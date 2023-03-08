@@ -1,4 +1,4 @@
-package com.sunnyday.design.chain;
+package com.sunnyday.design.behiviour.chain_of_responsibility;
 
 import java.util.ArrayList;
 import java.util.Arrays;

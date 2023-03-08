@@ -14,4 +14,6 @@ public class PersonRequest {
     private String name;
 
     private String email;
+
+    private String tenantId;
 }

@@ -1,11 +1,10 @@
-package com.sunnyday.design.chain.impl;
+package com.sunnyday.design.behiviour.chain_of_responsibility.impl;
 
-import com.sunnyday.design.chain.BlueNumberHandler;
-import com.sunnyday.design.chain.ChainInter;
-import com.sunnyday.design.chain.NumberHandler;
-import com.sunnyday.design.chain.RedNumberHandler;
+import com.sunnyday.design.behiviour.chain_of_responsibility.BlueNumberHandler;
+import com.sunnyday.design.behiviour.chain_of_responsibility.ChainInter;
+import com.sunnyday.design.behiviour.chain_of_responsibility.NumberHandler;
+import com.sunnyday.design.behiviour.chain_of_responsibility.RedNumberHandler;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

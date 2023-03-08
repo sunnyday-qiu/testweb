@@ -1,4 +1,4 @@
-package com.sunnyday.design.singleton;
+package com.sunnyday.design.creator.singleton;
 
 /**
  * Description: spring 使用的双重锁

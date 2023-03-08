@@ -1,9 +1,5 @@
-package com.sunnyday.design.chain;
+package com.sunnyday.design.behiviour.chain_of_responsibility;
 
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Description: 大乐透蓝球号码（前5位数字）

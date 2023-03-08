@@ -1,4 +1,4 @@
-package com.sunnyday.design.singleton;
+package com.sunnyday.design.creator.singleton;
 
 /**
  * Description: 利用enum 来实现单例
