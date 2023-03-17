@@ -13,6 +13,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
+import java.util.Objects;
+
 @PropertySource("redis.properties")
 @Configuration
 public class RedisConfig {

@@ -7,12 +7,14 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 import static java.util.concurrent.Executors.*;
 
 /**
- * Description:
+ * Description: 同步多线程
  *
  * @author sunnyday
  * @date 2022/5/18
@@ -34,7 +36,7 @@ public class CallableTest {
 
 
     public static void main(String[] args) throws Exception {
-        ExecutorService executorService = newFixedThreadPool(3);
+        ExecutorService executorService = new ThreadPoolExecutor(3, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingDeque<>());
 
         List<Future<Integer>> futures =
                 executorService.invokeAll(tasks, 30L, TimeUnit.SECONDS);
